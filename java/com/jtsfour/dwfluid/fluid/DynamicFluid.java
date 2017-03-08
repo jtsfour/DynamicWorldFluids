@@ -6,12 +6,15 @@ public class DynamicFluid {
 	
 	private Fluid FLUID;
 	
+	private boolean REGISTERED;
+	
 	private float visibility = 0F;
 	private int siltColor = 0;
 	private boolean replace = true;
 	
-	public DynamicFluid(Fluid fluid){
+	public DynamicFluid(Fluid fluid, boolean reg){
 		FLUID=fluid;
+		REGISTERED=reg;
 	}
 	
 	public void setForceReplace(boolean b0){

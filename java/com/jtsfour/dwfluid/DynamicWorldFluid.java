@@ -2,6 +2,8 @@ package com.jtsfour.dwfluid;
 
 import com.jtsfour.dwfluid.client.DWFluidClientProxy;
 
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,8 +30,20 @@ public class DynamicWorldFluid
     	FluidRegistry.enableUniversalBucket();
     }
     
+    public static Configuration DWFluidCONFIG;
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
+    	DWFluidCONFIG = new Configuration(event.getSuggestedConfigurationFile());
+    	
+    	DWFluidCONFIG.load();
+    	
+    	//config stuff
+    	
+    	//Property testprop = DWFluidCONFIG.get("TEST", "TESTBOOL", false);
+    	//System.out.println(testprop.getBoolean());
+    	DWFluidCONFIG.save();
+    	
     	if(proxy instanceof DWFluidClientProxy){
     		ISCLIENT=true;
     	}
