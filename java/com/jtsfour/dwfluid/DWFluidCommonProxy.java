@@ -2,7 +2,7 @@ package com.jtsfour.dwfluid;
 
 import com.jtsfour.dwfluid.block.DWFluidBlocks;
 import com.jtsfour.dwfluid.event.DWFluidEventHandler;
-import com.jtsfour.dwfluid.fluid.FluidRegisterHandler;
+import com.jtsfour.dwfluid.fluid.WorldHandler;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -16,7 +16,6 @@ public class DWFluidCommonProxy {
 	public void preInit(){
 		DWFluidEventHandler handler = new DWFluidEventHandler();
 		MinecraftForge.EVENT_BUS.register(handler);
-		FluidRegisterHandler.preInit();
 		
 		DWFluidBlocks.preInit();
 		//FMLCommonHandler.instance().bus().register(handler);
@@ -27,6 +26,6 @@ public class DWFluidCommonProxy {
 	}
 	
 	public void postInit(){
-		FluidRegisterHandler.postInit();
+		
 	}
 }
