@@ -17,6 +17,10 @@ public class DynamicFluid {
 		REGISTERED=reg;
 	}
 	
+	public boolean isRegistered(){
+		return REGISTERED;
+	}
+	
 	public void setForceReplace(boolean b0){
 		replace=b0;
 	}

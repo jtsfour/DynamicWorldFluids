@@ -1,6 +1,7 @@
 package com.jtsfour.dwfluid.client;
 
 import com.jtsfour.dwfluid.DWFluidCommonProxy;
+import com.jtsfour.dwfluid.client.render.block.DWFluidTileEntitySpecialRenderers;
 
 public class DWFluidClientProxy extends DWFluidCommonProxy {
 
@@ -11,6 +12,7 @@ public class DWFluidClientProxy extends DWFluidCommonProxy {
 	
 	public void preInit(){
 		super.preInit();
+		DWFluidTileEntitySpecialRenderers.preInit();
 	}
 	
 	public void init(){

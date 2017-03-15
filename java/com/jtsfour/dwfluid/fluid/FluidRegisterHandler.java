@@ -11,12 +11,15 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class FluidHandler {
+public class FluidRegisterHandler {
 	
+	//Map of all Dynamic Fluids
 	private static Map<String, DynamicFluid> reg_fluids = new HashMap<String, DynamicFluid>();
+	
+	//list of all fluids registered to minecraft
 	private static ArrayList<String> fluid_list = new ArrayList<String>();
 	
-	public FluidHandler(){
+	public FluidRegisterHandler(){
 		
 	}
 	
@@ -43,12 +46,17 @@ public class FluidHandler {
 		reg_fluids.put(fluid.getFluid().getUnlocalizedName(), fluid);
 	}
 	
-	public static void fixBlock(){
-		
+	public static boolean isFluidOverrided(String fluid){
+		if(reg_fluids.containsKey(fluid)){
+			return reg_fluids.get(fluid).isRegistered();
+		}
+		return false;
 	}
 	
-	public static void fixChunk(Chunk chunk, NBTTagCompound tag){
-		
+	public static DynamicFluid getDynamicFluid(String fluid){
+		return reg_fluids.get(fluid);
 	}
+	
+	
 
 }

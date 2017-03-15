@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "dwcore:blocks/dwcore_testblockmeta_yellow"
+    }
+}
